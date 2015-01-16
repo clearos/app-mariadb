@@ -131,6 +131,6 @@ class Setting extends ClearOS_Controller
         // Load views
         //-----------
 
-        $this->page->view_form('mariadb/setting', $data, lang('mariadb_mariadb_database'));
+        $this->page->view_form('mariadb/setting', $data, lang('base_settings'));
     }
 }

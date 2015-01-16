@@ -1,9 +1,9 @@
 
 Name: app-mariadb
 Epoch: 1
-Version: 2.0.0
+Version: 2.0.14
 Release: 1%{dist}
-Summary: MariaDB Server
+Summary: MariaDB Database Server
 License: GPLv3
 Group: ClearOS/Apps
 Source: %{name}-%{version}.tar.gz
@@ -15,7 +15,7 @@ Requires: app-base
 MariaDB is a popular database system.  It can be configured to run database driven applications, websites, CRM and practically any other resource requiring a relational storage service.
 
 %package core
-Summary: MariaDB Server - Core
+Summary: MariaDB Database Server - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core

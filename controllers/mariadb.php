@@ -68,6 +68,6 @@ class MariaDB extends ClearOS_Controller
             'mariadb/setting'
         );
 
-        $this->page->view_forms($views, lang('mariadb_mariadb_database'));
+        $this->page->view_forms($views, lang('mariadb_app_name'));
     }
 }
