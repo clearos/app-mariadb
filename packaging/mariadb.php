@@ -20,7 +20,7 @@ clearos_load_language('mariadb');
 $configlet = array(
 	'title' => lang('mariadb_app_name'),
 	'package' => 'mariadb-server',
-	'process_name' => 'mysqld',
+	'process_name' => '/usr/libexec/mysqld',
 	'pid_file' => '/var/run/mariadb/mariadb.pid',
 	'reloadable' => TRUE,
 	'url' => '/app/mariadb'
