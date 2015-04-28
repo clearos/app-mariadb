@@ -72,12 +72,14 @@ echo "</div>";
 
 echo "<div id='mariadb_password_ok' style='display:none;'>";
 
+$options['buttons']  = array(
+    anchor_custom('/mysql', lang('mariadb_go_to_management_tool'), 'high', array('target' => '_blank'))
+);
+
 echo infobox_highlight(
     lang('mariadb_management_tool'),
-    lang('mariadb_management_tool_help') . '<br><br>' .
-    "<p align='center'>" .  
-    anchor_custom('/mysql', lang('mariadb_go_to_management_tool'), 'high', array('target' => '_blank')) . 
-    "</p>"
+    lang('mariadb_management_tool_help'),
+    $options
 );
 
 echo form_open('mariadb');

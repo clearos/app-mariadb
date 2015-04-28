@@ -1,7 +1,7 @@
 
 Name: app-mariadb
 Epoch: 1
-Version: 2.0.14
+Version: 2.0.24
 Release: 1%{dist}
 Summary: MariaDB Database Server
 License: GPLv3
