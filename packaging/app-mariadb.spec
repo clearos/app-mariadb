@@ -1,7 +1,7 @@
 
 Name: app-mariadb
 Epoch: 1
-Version: 2.0.24
+Version: 2.1.0
 Release: 1%{dist}
 Summary: MariaDB Database Server
 License: GPLv3
@@ -23,7 +23,7 @@ Requires: app-base-core >= 1:1.2.6
 Requires: app-network-core
 Requires: app-storage-core >= 1:1.4.7
 Requires: mariadb-server >= 5.5.40
-Requires: phpMyAdmin >= 4.1.13
+Requires: phpMyAdmin >= 4.4.9
 
 %description core
 MariaDB is a popular database system.  It can be configured to run database driven applications, websites, CRM and practically any other resource requiring a relational storage service.

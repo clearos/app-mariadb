@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'mariadb';
-$app['version'] = '2.0.24';
+$app['version'] = '2.1.0';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -31,7 +31,7 @@ $app['core_requires'] = array(
     'app-network-core', 
     'app-storage-core >= 1:1.4.7',
     'mariadb-server >= 5.5.40',
-    'phpMyAdmin >= 4.1.13'
+    'phpMyAdmin >= 4.4.9'
 );
 
 $app['core_file_manifest'] = array( 
