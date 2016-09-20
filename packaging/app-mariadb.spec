@@ -1,7 +1,7 @@
 
 Name: app-mariadb
 Epoch: 1
-Version: 2.1.6
+Version: 2.2.0
 Release: 1%{dist}
 Summary: MariaDB Database Server
 License: GPLv3
@@ -38,6 +38,8 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/mariadb
 cp -r * %{buildroot}/usr/clearos/apps/mariadb/
 
+install -d -m 0755 %{buildroot}/var/clearos/mariadb
+install -d -m 0755 %{buildroot}/var/clearos/mariadb/backup
 install -D -m 0644 packaging/mariadb.php %{buildroot}/var/clearos/base/daemon/mariadb.php
 install -D -m 0644 packaging/mariadb_default.conf %{buildroot}/etc/clearos/storage.d/mariadb_default.conf
 
@@ -78,6 +80,8 @@ exit 0
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/mariadb/packaging
 %dir /usr/clearos/apps/mariadb
+%dir /var/clearos/mariadb
+%dir /var/clearos/mariadb/backup
 /usr/clearos/apps/mariadb/deploy
 /usr/clearos/apps/mariadb/language
 /usr/clearos/apps/mariadb/libraries

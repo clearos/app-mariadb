@@ -1,5 +1,7 @@
 #!/bin/sh
 
+TIMESTAMP=`date "+%b-%d-%Y-%T"`
+
 # Check phpMyAdmin configuration
 #-------------------------------
 
@@ -10,4 +12,14 @@ if [ -z "$CHECK" ]; then
     echo "" >> /etc/phpMyAdmin/config.inc.php
     echo "// Blowfish secret" >> /etc/phpMyAdmin/config.inc.php
     echo "\$cfg['blowfish_secret'] = '$SECRET';" >> /etc/phpMyAdmin/config.inc.php
+fi
+
+# MySQL to MariaDB upgrade
+#-------------------------
+
+CHECK=`grep "^pid-file.*mysqld.pid" /etc/my.cnf`
+if [ -n "$CHECK" ]; then
+    logger -p local6.notice -t installer "app-mariadb-core - updating my.cnf to MariaDB"
+    cp /etc/my.cnf /var/clearos/mariadb/backup/my.cnf.$TIMESTAMP
+    cp /usr/clearos/apps/mariadb/deploy/my.cnf /etc/my.cnf
 fi

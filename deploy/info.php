@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'mariadb';
-$app['version'] = '2.1.6';
+$app['version'] = '2.2.0';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -37,6 +37,11 @@ $app['core_requires'] = array(
 $app['core_file_manifest'] = array( 
     'mariadb_default.conf' => array ( 'target' => '/etc/clearos/storage.d/mariadb_default.conf' ),
     'mariadb.php'=> array( 'target' => '/var/clearos/base/daemon/mariadb.php' ),
+);
+
+$app['core_directory_manifest'] = array(
+    '/var/clearos/mariadb' => array(),
+    '/var/clearos/mariadb/backup' => array(),
 );
 
 $app['delete_dependency'] = array(
