@@ -73,7 +73,7 @@ echo "</div>";
 echo "<div id='mariadb_password_ok' style='display:none;'>";
 
 $options['buttons']  = array(
-    anchor_custom('/mysql', lang('mariadb_go_to_management_tool'), 'high', array('target' => '_blank'))
+    anchor_custom($url_php_myadmin, lang('mariadb_go_to_management_tool'), 'high', array('target' => '_blank'))
 );
 
 echo infobox_highlight(

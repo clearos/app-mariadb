@@ -123,6 +123,7 @@ class Setting extends ClearOS_Controller
         try {
             $is_running = $this->mariadb->get_running_state();
             $data['is_password_set'] = $this->mariadb->is_root_password_set();
+            $data['url_php_myadmin'] = $this->mariadb->get_url_php_myadmin();
         } catch (Exception $e) {
             $this->page->view_exception($e);
             return;

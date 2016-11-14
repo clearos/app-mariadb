@@ -7,7 +7,7 @@
  * @package    mariadb
  * @subpackage libraries
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2014 ClearFoundation
+ * @copyright  2014-2016 ClearFoundation
  * @license    http://www.gnu.org/copyleft/lgpl.html GNU Lesser General Public License version 3 or later
  * @link       http://www.clearfoundation.com/docs/developer/apps/mariadb/
  */
@@ -97,6 +97,7 @@ class MariaDB extends Daemon
 
     const COMMAND_MYSQLADMIN = '/usr/bin/mysqladmin';
     const COMMAND_MYSQL = '/usr/bin/mysql';
+    const FILE_PHP_MYADMIN_CONFIGLET = '/etc/httpd/conf.d/phpMyAdmin.conf';
 
     ///////////////////////////////////////////////////////////////////////////////
     // M E T H O D S
@@ -237,6 +238,22 @@ class MariaDB extends Daemon
         } catch (Exception $e) {
             // Not fatal
         }
+    }
+
+    /**
+     * Gets the URL for accessing PHP MyADMIN.
+     *
+     * @return string
+     */
+
+    public function get_url_php_myadmin()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+        // If a user upgrades to PHP 5.6, they also will have installed separate phpMyAdmin
+        if (file_exists(self::FILE_PHP_MYADMIN_CONFIGLET))
+            return "https://" . $_SERVER['SERVER_ADDR'] . "/phpMyAdmin";
+
+        return "https://" . $_SERVER['SERVER_ADDR'] . ":81/mysql";
     }
 
     ///////////////////////////////////////////////////////////////////////////////
