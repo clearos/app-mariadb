@@ -1,6 +1,15 @@
 #!/bin/sh
 
+TIMESTAMP=`date "+%b-%d-%Y-%T"`
+
 # Initialize storage
 #-------------------
 
 /usr/sbin/storage
+
+# MySQL default configuration
+#----------------------------
+
+logger -p local6.notice -t installer "app-mariadb-core - updating my.cnf"
+cp /etc/my.cnf /var/clearos/mariadb/backup/my.cnf.$TIMESTAMP
+cp /usr/clearos/apps/mariadb/deploy/my.cnf /etc/my.cnf
