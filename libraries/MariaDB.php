@@ -251,9 +251,9 @@ class MariaDB extends Daemon
         clearos_profile(__METHOD__, __LINE__);
         // If a user upgrades to PHP 5.6, they also will have installed separate phpMyAdmin
         if (file_exists(self::FILE_PHP_MYADMIN_CONFIGLET))
-            return "https://" . $_SERVER['SERVER_ADDR'] . "/phpMyAdmin";
+            return "https://" . $_SERVER['SERVER_NAME'] . "/phpMyAdmin";
 
-        return "https://" . $_SERVER['SERVER_ADDR'] . ":81/mysql";
+        return "https://" . $_SERVER['SERVER_NAME'] . ":81/mysql";
     }
 
     ///////////////////////////////////////////////////////////////////////////////

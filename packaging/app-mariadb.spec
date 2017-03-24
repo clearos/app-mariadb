@@ -1,7 +1,7 @@
 
 Name: app-mariadb
 Epoch: 1
-Version: 2.3.1
+Version: 2.3.2
 Release: 1%{dist}
 Summary: MariaDB Database Server
 License: GPLv3
@@ -79,6 +79,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/mariadb/packaging
+%exclude /usr/clearos/apps/mariadb/unify.json
 %dir /usr/clearos/apps/mariadb
 %dir /var/clearos/mariadb
 %dir /var/clearos/mariadb/backup
